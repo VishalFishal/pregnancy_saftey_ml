@@ -25,6 +25,7 @@ This data cannot be used directly in the model without pretreatment. Cleaning st
 5. MCC: 0.6400865768675789
 
 Classification Report:
+```
               precision    recall  f1-score   support
 
            0       0.84      0.77      0.80        92
@@ -37,6 +38,7 @@ weighted avg       0.82      0.82      0.82       195
 Confusion Matrix:
 [[71 21]
  [14 89]]
+```
 
 ## Disclamers:
 ### This is not tested code! Please do not use the model for genuine medicinal research without reading the following:
