@@ -15,9 +15,34 @@ The drugs are classified in such a way that they are annotated with safety class
 We categorized drugs from categories A and B as "safe." These categories represent drugs with no demonstrated risk to the fetus (A) or those that have not shown risk in animal studies and lack human data (B).
 We categorized drugs from categories C, D, and X as "not safe." Category C includes drugs with adverse effects in animal studies and insufficient human data, while categories D and X include drugs with known risks to the fetus.
 
-This data cannot be used directly in the model without pretreatment. Cleaning steps included careful consideration of the chemicals to include, which would give a positive impact to the model’s performance in the context of accuracy. For example, salts and inorganics were removed as these could affect the descriptor values by introducing unwanted molecule weights. Any faulty smiles were dropped. Multiple datasets of drugs were tested to find the one with the best results.
+This data cannot be used directly in the model without pretreatment. Cleaning steps should carefully consider the chemicals to include, which would give a positive impact to the model’s performance in the context of accuracy. For example, salts and inorganics were removed as these could affect the descriptor values by introducing unwanted molecule weights. Any faulty smiles were dropped. Multiple datasets of drugs were tested to find the one with the best results.
 
-## Feature Extraction:
-In cheminformatics and predictive modeling, descriptor calculation is the process of characterizing a molecule's many qualities using numerical values that represent specific structural and compositional traits. These numerical values, known as descriptors, are used as input in computational models that predict chemical behavior, interactions, and biological activities.
-The molecular descriptors which act as our features for our model were calculated with the RDKit library, a powerful cheminformatics toolbox. The dataset, which originally included SMILES (Simplified Molecular Input Line Entry System) representations of chemical compounds, was supplemented with a comprehensive set of molecular descriptors. These descriptors give quantitative information about the molecules' chemical and structural features, which is critical for future predictive modeling.
-To construct these descriptors, the RDKit package was used to calculate numerous molecular properties in a methodical manner. A descriptor calculator was populated with all RDKit descriptors to ensure a full depiction of each molecule's attributes. The SMILES strings were processed to generate these descriptors, and the resulting data was incorporated into the current dataset. This stage involved addressing missing values by excluding entries with incomplete descriptor information, ensuring the dataset's integrity.
+## Results:
+Test Set Performance:
+Accuracy: 0.8205128205128205
+ROC AUC Score: 0.8838644997889404
+Kappa Score: 0.6384105960264901
+MCC: 0.6400865768675789
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.77      0.80        92
+           1       0.81      0.86      0.84       103
+
+    accuracy                           0.82       195
+   macro avg       0.82      0.82      0.82       195
+weighted avg       0.82      0.82      0.82       195
+
+Confusion Matrix:
+[[71 21]
+ [14 89]]
+
+##Disclamers:
+###This is not tested code! Please do not use the model for genuine medicinal research without reading the following:
+1. The dataset was not created by me, I have no hand in the selection of the drugs.
+2. Other enhancements that were tested and gave similar results were RFECV to reduce the number of features. This is not present in the current version of the code.
+3. Features for the drugs can be retrieved using the PaDEL software, which has many more descriptors and fingerprints. Be warned that this software takes time to generate all of the desired data.
+4. Currently the model uses all the descriptors provided in the RDKit module. No feature studies were done due to lack of domain knowledge.
+5. It is highly likely that this model is severely overfitted due to the above facts.
+
+####Please consider improving this model!
