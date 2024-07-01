@@ -18,11 +18,12 @@ We categorized drugs from categories C, D, and X as "not safe." Category C inclu
 This data cannot be used directly in the model without pretreatment. Cleaning steps should carefully consider the chemicals to include, which would give a positive impact to the model’s performance in the context of accuracy. For example, salts and inorganics were removed as these could affect the descriptor values by introducing unwanted molecule weights. Any faulty smiles were dropped. Multiple datasets of drugs were tested to find the one with the best results.
 
 ## Results:
-Test Set Performance:
-Accuracy: 0.8205128205128205
-ROC AUC Score: 0.8838644997889404
-Kappa Score: 0.6384105960264901
-MCC: 0.6400865768675789
+1. Test Set Performance:
+2. Accuracy: 0.8205128205128205
+3. ROC AUC Score: 0.8838644997889404
+4. Kappa Score: 0.6384105960264901
+5. MCC: 0.6400865768675789
+
 Classification Report:
               precision    recall  f1-score   support
 
@@ -37,12 +38,12 @@ Confusion Matrix:
 [[71 21]
  [14 89]]
 
-##Disclamers:
-###This is not tested code! Please do not use the model for genuine medicinal research without reading the following:
+## Disclamers:
+### This is not tested code! Please do not use the model for genuine medicinal research without reading the following:
 1. The dataset was not created by me, I have no hand in the selection of the drugs.
 2. Other enhancements that were tested and gave similar results were RFECV to reduce the number of features. This is not present in the current version of the code.
 3. Features for the drugs can be retrieved using the PaDEL software, which has many more descriptors and fingerprints. Be warned that this software takes time to generate all of the desired data.
 4. Currently the model uses all the descriptors provided in the RDKit module. No feature studies were done due to lack of domain knowledge.
 5. It is highly likely that this model is severely overfitted due to the above facts.
 
-####Please consider improving this model!
+#### Please consider improving this model!
